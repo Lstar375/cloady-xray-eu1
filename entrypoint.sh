@@ -1,7 +1,8 @@
 #!/bin/sh
 set -eu
-PORT="${PORT:-8080}"
+PORT="${PORT:-3000}"
 : "${XRAY_UUID:?XRAY_UUID environment variable must be set at deploy time}"
+mkdir -p /usr/local/etc/xray
 cat > /usr/local/etc/xray/config.json << JSON
 {
   "log": {"loglevel": "warning"},
